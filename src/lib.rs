@@ -114,7 +114,7 @@ async fn get_summary_truncated(inp: &str) -> Option<String> {
         ..Default::default()
     };
 
-    let question = format!("summarize this within 100 words: {news_body}");
+    let question = format!("summarize this for one single compelling tweet: {news_body}");
 
     match openai.chat_completion(&chat_id, &question, &co).await {
         Ok(r) => Some(r.choice),
